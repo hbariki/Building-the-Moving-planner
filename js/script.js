@@ -21,7 +21,7 @@ function loadData() {
     var streetviewUrl = 'http://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + address +' ';
     $body.append( '<img class="bgimg" src="' + streetviewUrl + '">');
 
-    var nytimesUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + address +
+    var nytimesUrl = 'http://api.nyattimes.com/svc/search/v2/articlesearch.json?q=' + address +
         '&sortnewest&api-key=6366822d75c64c0fa83b4e39a57a5bde'
     $.getJSON(nytimesUrl, function (data) {
         $nytHeaderElem.text('New York Times Articles About' + cityStr);
@@ -33,7 +33,9 @@ function loadData() {
             '<li>');
         };
 
-    })
+    }).fail(function(e){
+        $nytHeaderElem.text('New York Times Articles Could Not Be Loaded');
+    });
 
     return false;
 }
