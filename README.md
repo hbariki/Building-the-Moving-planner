@@ -6,11 +6,11 @@ view to display the background image, Newyork times API to displays the Newyork 
 
 Instructions to Run
 
--clone or download repository.
--open index.html
+-Clone or download repository.
+-Open index.html
 -It displays the webpage.
 
-Used jquery,HTML,CSS
 
-References
+
+Resources
 -Intro to Ajax course
